@@ -1,0 +1,12 @@
+__pycache__/*
+lib/__pycache__/*
+lib/__pycache__/
+__pycache__/
+*.log
+*.db
+*.sql
+*.geany
+.vscode
+*.swp
+mupdatenv
+mupdate.service
