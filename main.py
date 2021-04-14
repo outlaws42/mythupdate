@@ -6,7 +6,6 @@ from schedule import run_pending, every
 from smtplib import SMTP
 from time import sleep
 from getpass import getuser
-from os import environ
 import subprocess
 
 username = getuser()
