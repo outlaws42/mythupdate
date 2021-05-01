@@ -9,11 +9,9 @@ from tmod import (
 from schedule import run_pending, every
 from smtplib import SMTP
 from time import sleep
-from getpass import getuser
 from datetime import datetime, time
 import subprocess
 
-username = getuser()
 conf_dir = ".config/mythupdate"
 conf_file = 'mythupdate_set.yaml'
 
@@ -35,7 +33,6 @@ def  call_funtion():
   log = settings['logs']
   lines = settings['lines']
 
-  print(username)
   with open(log, 'w') as file:
     update = subprocess.run(['mythfilldatabase'], stdout=file, text=True)
   print('mythfilldatabse was run, check the log file for details')
@@ -63,8 +60,8 @@ def mail_body(filename, lines):
   age =  check_file_age(filename, 'relative')
   if age >= 24:
     con = (
-      f"The log file {filename} for " 
-      f"{username} is {age} hours old check backup")
+      f"The log file {filename} " 
+      f"is {age} hours old check backup")
   else:
     fcon = last_n_lines(
       fname = filename, 
