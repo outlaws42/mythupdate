@@ -1,7 +1,12 @@
 #! /usr/bin/env python3
 
 # -*- coding: utf-8 -*-
-version = "2021-05-01"
+
+"""
+This is a collection of helper scripts I created for generic repeatable
+operations. This version is specific to code needed for this operation.
+To find the full version look for tmod in version control.
+"""
 
 # Imports included with python
 import os
@@ -23,6 +28,9 @@ try:
     from cryptography.fernet import Fernet
 except ModuleNotFoundError:
     pass
+
+__author__ = "Troy Franks"
+__version__ = "2023-03-22"
 
 
 # colors
