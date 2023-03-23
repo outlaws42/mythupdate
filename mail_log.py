@@ -18,7 +18,7 @@ from tmod import (
 )
 
 __author__ = "Troy Franks"
-__version__ = "2023-03-22"
+__version__ = "2023-03-23"
 
 # Global Variables
 username = getuser()
@@ -35,28 +35,7 @@ def get_config(
     return settings
 
 
-def create_file(
-    config_setting,
-    location: str,
-):
-    config = config_setting
-    logs = config["logs"]
-    lines = config["lines"]
-
-    body = file_body(
-        filename=logs,
-        lines=lines,
-        fdest=location,
-    )
-    save_file(
-        fname=f"{logs}.txt",
-        content=body,
-        fdest=location,
-        mode="w",
-    )
-
-
-def file_body(
+def mail_body(
     filename: str,
     lines: int,
     fdest: str = "home",
@@ -81,4 +60,3 @@ if __name__ == "__main__":
     config = get_config()
     config_dir = ".config"
     conf_file = "emailog_set.yaml"
-    create_file(config)

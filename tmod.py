@@ -219,6 +219,20 @@ def check_file_dir(fname: str, fdest: str = "home"):
     return file_exist
 
 
+# Settings
+
+
+def get_config(
+    conf_dir: str,
+    conf_file: str,
+):
+    settings = open_yaml(
+        fname=f"{conf_dir}/{conf_file}",
+        fdest="home",
+    )
+    return settings
+
+
 # Encryption
 
 
@@ -288,6 +302,8 @@ def last_n_lines(fname, lines, fdest="relative"):
 
 
 # file information
+
+
 def check_file_age(fname, fdest="relative"):
     """
     Returns the difference of the current timestamp and the
