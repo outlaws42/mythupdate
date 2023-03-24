@@ -85,7 +85,7 @@ def call_funtion():
 
 
 dir_exist = check_dir(conf_dir)
-if dir_exist == False:
+if dir_exist is False:
     config_setup_myth(conf_dir, conf_file)
 every().day.at(str(runtime())).do(call_funtion)
 
